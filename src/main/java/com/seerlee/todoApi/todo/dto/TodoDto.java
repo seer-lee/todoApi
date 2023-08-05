@@ -21,6 +21,14 @@ public class TodoDto {
         this.done = entity.isDone();
     }
 
+    public static TodoEntity toEntity(final TodoDto data) {
+        return TodoEntity.builder()
+                .id(data.getId())
+                .title(data.getTitle())
+                .done(data.isDone())
+                .build();
+    }
+
     public void setId(String id) {
         this.id = id;
     }
